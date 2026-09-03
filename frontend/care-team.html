@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Care Team</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+</head>
+<body data-page="care-team">
+    <div id="mainNav"></div>
+    <main class="container page-shell py-4">
+        <div id="alerts"></div>
+        <div class="row g-3">
+            <div class="col-lg-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="h5">Patient Selection</h1>
+                        <p class="section-subtitle">Load an authorized patient before managing membership.</p>
+                        <form id="careTeamPatientForm">
+                            <label class="form-label" for="careTeamPatientSearch">Patient ID</label>
+                            <div class="d-flex gap-2">
+                                <input class="form-control" id="careTeamPatientSearch" name="patient_id" placeholder="Patient ID" required>
+                                <button class="btn btn-outline-primary" type="submit">Search</button>
+                            </div>
+                        </form>
+                        <div class="metric-card mt-3" id="careTeamPatientSummary">
+                            <div class="metric-label">Selected patient</div>
+                            <div class="brand-subtitle">No patient selected</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="h5">Assign Team Member</h2>
+                        <form id="careTeamAssignForm">
+                            <div class="mb-3">
+                                <label class="form-label" for="careTeamPatientId">Patient</label>
+                                <input class="form-control" id="careTeamPatientId" name="patient_id" placeholder="Patient ID" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="staffUserId">Healthcare Professional</label>
+                                <select class="form-select" id="staffUserId" name="user_id" required>
+                                    <option value="">Loading staff...</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="careTeamRole">Care Team Role</label>
+                                <select class="form-select" id="careTeamRole" name="role" required>
+                                    <option value="">Select assignment role</option>
+                                    <option value="PRIMARY_DOCTOR">Primary Doctor</option>
+                                    <option value="ATTENDING_DOCTOR">Attending Doctor</option>
+                                    <option value="NURSE">Nurse</option>
+                                    <option value="LAB_TECHNICIAN">Lab Technician</option>
+                                    <option value="CARE_COORDINATOR">Care Coordinator</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Assign</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column flex-md-row gap-3 justify-content-between mb-3">
+                            <div>
+                                <h2 class="h5 mb-1">Active Care Team & History</h2>
+                                <p class="section-subtitle mb-0">Active and inactive assignments are shown for audit-aware review.</p>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Staff</th>
+                                        <th>Staff Role</th>
+                                        <th>Assignment Role</th>
+                                        <th>Assigned</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="careTeamTable"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="deactivateCareTeamModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="deactivateCareTeamForm">
+                        <div class="modal-header">
+                            <h2 class="modal-title h5">Deactivate assignment</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" id="deactivateCareTeamId" name="careTeamId">
+                            <p class="mb-0">This will mark the selected care-team assignment inactive. Existing audit history will remain available.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn btn-danger" type="submit">Deactivate</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

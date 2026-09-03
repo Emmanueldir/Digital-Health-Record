@@ -1,0 +1,30 @@
+# Dependencies and runtime output
+node_modules/
+coverage/
+logs/
+*.log
+npm-debug.log*
+
+# Secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Sensitive runtime data: never commit patient attachments or generated files
+uploads/**
+!uploads/.gitkeep
+
+# Editor, OS, and local tooling files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local-only project and academic working notes. Public equivalents live in docs/.
+PROJECT_CONTEXT.md
+CHATGPT_UPDATE.md
+CHAPTER4_TEST_CASES.md

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DHR Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+</head>
+<body class="auth-page" data-page="login">
+    <main class="container py-5">
+        <div class="row min-vh-100 align-items-center justify-content-center">
+            <div class="col-xl-10">
+                <div id="alerts"></div>
+                <section class="auth-panel">
+                    <div class="row g-0">
+                        <div class="col-lg-5">
+                            <div class="auth-aside h-100">
+                                <span class="brand-mark mb-4" aria-hidden="true">D</span>
+                                <h1 class="display-6 fw-bold mb-3">Digital Health Record</h1>
+                                <p class="text-secondary mb-4">Secure clinical access for patient care, audit readiness, and high-trust hospital operations.</p>
+                                <div class="metric-card bg-white">
+                                    <div class="metric-label">Security posture</div>
+                                    <div class="metric-value">MFA</div>
+                                    <div class="brand-subtitle">Staff roles continue with OTP verification.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="auth-form">
+                                <p class="page-kicker mb-2">Protected workspace</p>
+                                <h2 class="h3 fw-bold mb-4">Sign in</h2>
+                                <form id="loginForm">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="email">Email</label>
+                                        <input class="form-control" id="email" type="email" name="email" autocomplete="email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="password">Password</label>
+                                        <input class="form-control" id="password" type="password" name="password" autocomplete="current-password" required>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label" for="role">Role</label>
+                                        <select class="form-select" id="role" name="role" required>
+                                            <option>Admin</option>
+                                            <option>Doctor</option>
+                                            <option>Nurse</option>
+                                            <option>Lab Technician</option>
+                                            <option>Patient</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-primary w-100" type="submit">Continue securely</button>
+                                    <div class="text-center mt-3">
+                                        <span class="text-secondary">New patient or user?</span>
+                                        <a class="fw-bold" href="register.html">Create an account</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

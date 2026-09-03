@@ -1,0 +1,18 @@
+:root {
+  --google-primary: #1A73E8;
+  --google-secondary: #00838F;
+  --google-success: #137333;
+  --google-warning: #B06000;
+  --google-danger: #C5221F;
+
+  --bg-app: #F8F9FA;
+  --bg-surface: #FFFFFF;
+  --bg-hover: #F1F3F4;
+
+  --text-primary: #202124;
+  --text-secondary: #5F6368;
+  --text-muted: #80868B;
+
+  --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
